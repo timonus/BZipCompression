@@ -10,10 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSData (BZip)
-
-- (nullable instancetype)tj_bzipDecompressedData;
-
-@end
+NSData *TJBZipDecompressedData(NSData *const data);
 
 NS_ASSUME_NONNULL_END

@@ -11,15 +11,13 @@
 
 static const NSUInteger BZipCompressionBufferSize = 1024;
 
-@implementation NSData (BZip)
-
 // Inspired by https://github.com/blakewatters/BZipCompression
-- (instancetype)tj_bzipDecompressedData
+NSData *TJBZipDecompressedData(NSData *const data)
 {
     bz_stream stream;
     bzero(&stream, sizeof(stream));
-    stream.next_in = (char *)self.bytes;
-    stream.avail_in = (unsigned int)self.length;
+    stream.next_in = (char *)data.bytes;
+    stream.avail_in = (unsigned int)data.length;
 
     char buffer[BZipCompressionBufferSize];
     stream.next_out = buffer;
@@ -49,5 +47,3 @@ static const NSUInteger BZipCompressionBufferSize = 1024;
     
     return decompressedData;
 }
-
-@end

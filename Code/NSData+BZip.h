@@ -10,6 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-NSData *TJBZipDecompressedData(NSData *const data);
+NSData *_Nullable TJBZipDecompressedData(NSData *_Nullable data);
 
 NS_ASSUME_NONNULL_END
